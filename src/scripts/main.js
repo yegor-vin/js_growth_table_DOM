@@ -27,7 +27,7 @@ body.addEventListener('click', (e) => {
     appendColumn.disabled = false;
 
     document.querySelectorAll('tr').forEach((row) => {
-      const lastChild = row.lastChild;
+      const lastChild = row.lastElementChild;
 
       lastChild.remove();
 
