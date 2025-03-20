@@ -5,10 +5,10 @@ const removeColumn = document.querySelector('.remove-column');
 const appendRow = document.querySelector('.append-row');
 const removeRow = document.querySelector('.remove-row');
 
-const table = document.querySelector('body');
-const blueTable = document.querySelector('table');
+const body = document.querySelector('body');
+const table = document.querySelector('tbody');
 
-table.addEventListener('click', (e) => {
+body.addEventListener('click', (e) => {
   if (e.target === appendColumn) {
     removeColumn.disabled = false;
 
@@ -44,9 +44,9 @@ table.addEventListener('click', (e) => {
 
     newRow.innerHTML = document.querySelector('tr').innerHTML;
 
-    blueTable.appendChild(newRow);
+    table.appendChild(newRow);
 
-    if (blueTable.querySelectorAll('tr').length > 9) {
+    if (table.querySelectorAll('tr').length > 9) {
       appendRow.disabled = true;
     }
   }
@@ -54,7 +54,7 @@ table.addEventListener('click', (e) => {
   if (e.target === removeRow) {
     appendRow.disabled = false;
 
-    const lastRowChild = blueTable.lastChild;
+    const lastRowChild = table.lastElementChild;
 
     lastRowChild.remove();
 
